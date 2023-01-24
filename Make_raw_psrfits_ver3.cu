@@ -285,12 +285,12 @@ int main(){
   fprintf(fp_param, "bitsize : %d\ntelescope : %s\nSR : %lld", INPUT_BITSIZE, observationdata,SR);
   //fprintf(fp_time, "averaging + output time : %d s\n", time_aveout);
   fprintf(fp_param, "freq width : %f\n", FREQ_DATA_WIDTH);
-  fprintf(fp_param, "\n------------------------------------\n");
-  fprintf(fp_param, "ch number(chnum) : %d\n ", (FFTP/2/64));
+  //fprintf(fp_param, "\n------------------------------------\n");
+  fprintf(fp_param, "ch number(chnum) : %d\n", (FFTP/2/64));
   //fprintf(fp_param, "lowest freq : %f\nfreq width : %f\n",FREQ_DATA_LOW, FREQ_DATA_WIDTH);
   fprintf(fp_param, "highest freq : %f\n",FREQ_DATA_LOW+FREQ_DATA_WIDTH);
-  fprintf(fp_param, "dt(tsamp) : %e[s]\n ", (double)(FFTP)/SR);
-  fprintf(fp_param, "dnu(foff): %f\n[MHz]", (double)(FREQ_DATA_WIDTH)/(FFTP/2/64));
+  fprintf(fp_param, "dt(tsamp) : %e[s]\n", (double)(FFTP)/SR);
+  fprintf(fp_param, "dnu(foff): %f[MHz]\n", (double)(FREQ_DATA_WIDTH)/(FFTP/2/64));
   fclose(fp_param);
 }
 

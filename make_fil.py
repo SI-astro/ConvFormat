@@ -4,8 +4,8 @@ import numpy as np
 from your.formats.filwriter import make_sigproc_object
 import time
 
-datafile = 'HitCrabX_2021339160523-160533_8us_f.txt'
-newfile = 'crab_HIT_8G_8us_f_10s.fil'
+datafile = 'HitCrabX_2021339160523-160533_8us_f.txt' #input data
+newfile = 'crab_HIT_8G_8us_f_10s.fil' #output data
 
 ch_num = 64
 
@@ -14,9 +14,9 @@ sigproc_object = make_sigproc_object(
     rawdatafile  = str(newfile),
     source_name = "Crab", #target object
     nchans  = int(ch_num),
-    foff = -8.0, #MHz channel frequency width. You - 
+    foff = -8.0, #MHz channel frequency width. 
     fch1 = 8704, # MHz, Max observed frequency
-    tsamp = 8e-6, # seconds, sampling time?
+    tsamp = 8e-6, # seconds, sampling time
     tstart = 59553.6704629629, #MJD
     src_raj = 053431.973, # HHMMSS.SS
     src_dej = +220052.06, # DDMMSS.SS

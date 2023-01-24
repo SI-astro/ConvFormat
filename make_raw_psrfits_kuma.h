@@ -25,12 +25,6 @@ extern "C" {
 #define FREQ_DATA_LOW 6600.0 //MHz
 #define FREQ_DATA_WIDTH 512.0 //MHZ
 #define FINE_TIME (7.8125*1e-9)
-//for de dispersion
-#define INPUT_DM_VAL 330.0 //56.743 //56.764 //56.764 //178 //56.764 //
-//for averaging
-#define INTG_TIME 1000 //us
-#define mode 1 //0->sum by CPU, 1->sum by GPU
-#define method 0
 //for CUDA
 #define SET_BLOCK 512 //de-dispersion
 #define SET_BLOCK_TIME 512 //num bin of time

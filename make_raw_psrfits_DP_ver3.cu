@@ -163,11 +163,13 @@ int read_Ibaraki_Y_to_d(unsigned char *raw_pre, double *d_real, FILE **fp, cufft
       time_e[4] = cputimeinsec();
 
       //end for Hitachi or Takahagi data
+      /*
       printf("time for malloc for bit conversion : %lf\n", time_e[0]-time_s[0]);
       printf("time for fread : %lf\n", time_e[1]-time_s[1]);
       printf("time for memcpy of raw data : %lf\n", time_e[2]-time_s[2]);
       printf("time for bit conversion : %lf\n", time_e[3]-time_s[3]);
       printf("time for free : %lf\n", time_e[4]-time_s[4]);
+      */
 
       *time_arranging_bit += (time_e[3] - time_s[3]);
       *time_fread += (time_e[1]-time_s[1]);
