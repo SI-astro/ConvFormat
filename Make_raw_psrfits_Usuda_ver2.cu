@@ -285,7 +285,7 @@ int main(){
   t_end = cputimeinsec();
   printf("%2.5f sec\n",t_end-t_start);
   char timefile[256];
-  sprintf(timefile, "../crabGRP/time/calculation_time_u21339a4_ave500nsbyGPU.dat");
+  sprintf(timefile, "%s.time", OUTPUT_DATA);
   FILE *fp_time;
   if ((fp_time = fopen(timefile, "wb")) == NULL){
          printf("file open error!!\n");

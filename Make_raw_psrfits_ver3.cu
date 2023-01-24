@@ -256,7 +256,7 @@ int main(){
   t_end = cputimeinsec();
   printf("%2.5f sec\n",t_end-t_start);
   char timefile[256];
-  sprintf(timefile, "../crabGRP/time/calculation_time_u21339a4_ave500nsbyGPU.dat");
+  sprintf(timefile, "%s.time", OUTPUT_DATA);
   FILE *fp_time;
   if ((fp_time = fopen(timefile, "wb")) == NULL){
          printf("file open error!!\n");
@@ -275,7 +275,7 @@ int main(){
   fclose(fp_time);
 
   char paramfile[256];
-  sprintf(paramfile, "u21339a4_ave500nsbyGPU.param");
+  sprintf(paramfile, "%s.param", OUTPUT_DATA);
   FILE *fp_param;
   if ((fp_param = fopen(paramfile, "wb")) == NULL){
          printf("file open error!!\n");
@@ -287,7 +287,8 @@ int main(){
   fprintf(fp_param, "freq width : %f\n", FREQ_DATA_WIDTH);
   fprintf(fp_param, "\n------------------------------------\n");
   fprintf(fp_param, "ch number(chnum) : %d\n ", (FFTP/2/64));
-  fprintf(fp_param, "lowest freq : %f\nfreq width : %f\n",FREQ_DATA_LOW, FREQ_DATA_WIDTH);
+  //fprintf(fp_param, "lowest freq : %f\nfreq width : %f\n",FREQ_DATA_LOW, FREQ_DATA_WIDTH);
+  fprintf(fp_param, "highest freq : %f\n",FREQ_DATA_LOW+FREQ_DATA_WIDTH);
   fprintf(fp_param, "dt(tsamp) : %e[s]\n ", (double)(FFTP)/SR);
   fprintf(fp_param, "dnu(foff): %f\n[MHz]", (double)(FREQ_DATA_WIDTH)/(FFTP/2/64));
   fclose(fp_param);
